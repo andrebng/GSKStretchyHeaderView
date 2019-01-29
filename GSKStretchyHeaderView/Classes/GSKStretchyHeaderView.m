@@ -102,9 +102,19 @@ static const CGFloat kNibDefaultMaximumContentHeight = 240;
                             previousContentOffset:self.scrollView.contentOffset];
 }
 
+- (void)setScrollViewContentOffset:(CGFloat)offset {
+    self.scrollView.contentOffset = CGPointMake(0, offset);
+}
+
 - (void)setContentInset:(UIEdgeInsets)contentInset {
     _contentInset = contentInset;
     [self setupScrollViewInsetsIfNeeded];
+}
+
+- (void)setGSKLayout {
+    [self.scrollView gsk_layoutStretchyHeaderView:self
+                                    contentOffset:self.scrollView.contentOffset
+                            previousContentOffset:self.scrollView.contentOffset];
 }
 
 #pragma mark - Public methods
