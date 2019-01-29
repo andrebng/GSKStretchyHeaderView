@@ -136,6 +136,10 @@ typedef NS_ENUM(NSUInteger, GSKStretchyHeaderViewExpansionMode) {
 - (void)setMaximumContentHeight:(CGFloat)maximumContentHeight
                   resetAnimated:(BOOL)animated;
 
+- (void)setScrollViewContentOffset:(CGFloat)offset;
+
+- (void)setGSKLayout;
+
 @end
 
 
@@ -159,7 +163,7 @@ typedef NS_ENUM(NSUInteger, GSKStretchyHeaderViewExpansionMode) {
  *  The stretch factor is the relation between the current content height and the maximum (1) and minimum (0) contentHeight.
  *  Can be greater than 1 if contentViewBounces equals YES.
  */
-@property (nonatomic, readonly) CGFloat stretchFactor;
+@property (nonatomic, readwrite) CGFloat stretchFactor;
 
 /**
  *  The stretch delegate will be notified every time the stretchFactor changes.
